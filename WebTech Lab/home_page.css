@@ -1,0 +1,227 @@
+/* Reset margin and padding for all elements, apply default font, and set box-sizing to border-box */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Container for the main content area, covers the full viewport height with a background image */
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/bg.png);
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+/* Navbar styling, set height and align items vertically */
+.navbar {
+    height: 12%; 
+    display: flex;
+    align-items: center;
+}
+
+/* Logo inside navbar with cursor as pointer for interactivity */
+.logo {
+    width: 50px;
+    cursor: pointer;
+}
+
+/* Menu icon styling with a bit of space on the left and pointer cursor */
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+/* Right-align the navigation menu */
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+/* List items for navigation, displayed inline */
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+
+/* Basic styling for navigation links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    position: relative;
+    padding-bottom: 5px; /* Space for underline effect */
+    text-shadow: 0px 0px 10px rgba(0, 128, 255, 0.7); /* Bluish shadow */
+}
+
+/* Adding underline effect that grows from 0 to full width on hover */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s;
+}
+
+/* Expand the underline on hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Wrapper for the dropdown menu, to ensure it's placed relative to the menu icon */
+.menu-wrapper {
+    position: relative; /* Relative positioning for dropdown alignment */
+    display: inline-block;
+}
+
+/* Dropdown content hidden by default */
+.user-dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+    top: 100%; /* Position below the menu icon */
+    right: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Shadow for dropdown */
+}
+
+/* Show dropdown when hovering over the menu-wrapper */
+.menu-wrapper:hover .user-dropdown {
+    display: block; /* Dropdown shown when hovering */
+}
+
+/* Styling for unordered list inside the dropdown */
+.user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* List items inside the dropdown with padding */
+.user-dropdown ul li {
+    padding: 10px 15px;
+}
+
+/* Links inside the dropdown */
+.user-dropdown ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* Flex container for row layout */
+.row {
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+
+/* Flex column that takes 50% of the width */
+.col {
+    flex-basis: 50%;
+}
+
+/* Main heading styling */
+h1 {
+    color: white;
+    font-size: 100px;
+}
+
+/* Paragraph styling for small descriptive text */
+p {
+    color: white;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+/* Fun facts and more details text styling */
+.fun-fact, .more-details {
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+/* Button styling for "Explore" or similar buttons */
+button {
+    width: 180px;
+    color: black;
+    font-size: 12px;
+    padding: 12px 0;
+    background: white;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/* Common card styling for city images, hover effect for lifting the card */
+.card {
+    position: relative;
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 10px 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Background image for Zurich card */
+.card1 {
+    background-image: url(images/zurich.jpg);
+}
+
+/* Background image for Geneva card */
+.card2 {
+    background-image: url(images/geneava.jpeg);
+}
+
+/* Background image for Bern card */
+.card3 {
+    background-image: url(images/bern.jpg);
+}
+
+/* Background image for Swiss Alps card */
+.card4 {
+    background-image: url(images/swiss_alps.jpg);
+}
+
+/* Hover effect to lift the card */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Heading inside the card, positioned at the top-left */
+h5 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Description text inside the card, positioned at the bottom-left */
+.card p {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 12px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

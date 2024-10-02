@@ -1,0 +1,61 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family:  Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+}
+
+.background {
+    background-image: url('images/snowy_village.png'); 
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px 40px;
+    border-radius: 30px;
+    width: 300px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #49cbee;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.lables{
+    font-weight: 500;
+    color:rgb(0, 0, 0);
+}
