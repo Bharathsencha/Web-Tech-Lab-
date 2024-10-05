@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar styling, set height and align items vertically */
+.navbar {
+    height: 12%; 
+    display: flex;
+    align-items: center;
+}
+
+/* Logo inside navbar with cursor as pointer for interactivity */
+.logo {
+    width: 50px;
+    cursor: pointer;
+}
+/* Menu icon styling with a bit of space on the left and pointer cursor */
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+/* Right-align the navigation menu */
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+/* List items for navigation, displayed inline */
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+}
+
+/* Basic styling for navigation links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+    position: relative;
+    padding-bottom: 5px; /* Space for underline effect */
+    text-shadow: 0px 0px 10px rgba(0, 128, 255, 0.7); /* Bluish shadow */
+}
+
+/* Adding underline effect that grows from 0 to full width on hover */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s;
+}
+
+/* Expand the underline on hover */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Wrapper for the dropdown menu, to ensure it's placed relative to the menu icon */
+.menu-wrapper {
+    position: relative; /* Relative positioning for dropdown alignment */
+    display: inline-block;
+}
+
+/* Dropdown content hidden by default */
+.user-dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+    top: 100%; /* Position below the menu icon */
+    right: 0;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Shadow for dropdown */
+}
+
+/* Show dropdown when hovering over the menu-wrapper */
+.menu-wrapper:hover .user-dropdown {
+    display: block; /* Dropdown shown when hovering */
+}
+
+/* Styling for unordered list inside the dropdown */
+.user-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* List items inside the dropdown with padding */
+.user-dropdown ul li {
+    padding: 10px 15px;
+}
+
+/* Links inside the dropdown */
+.user-dropdown ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* Flex container for row layout */
+.row {
+    display: flex;
+    height: 88%;
+    align-items: center;
+}
+
+/* Flex column that takes 50% of the width */
+.col {
+    flex-basis: 50%;
+}
+
+/* Main heading styling */
+h1 {
+    color: white;
+    font-size: 50px;
+    line-height: 1.2; /* Adjust line-height for better spacing */
+    margin-bottom: 10px; /* Add space below the heading */
+    word-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+/* Paragraph styling for small descriptive text */
+p {
+    color: white;
+    font-size: 20px;
+    
+}
+
+/* Fun facts and more details text styling */
+.fun-fact, .more-details {
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+}
+/* Heading inside the card, positioned at the top-left */
+h5 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.text-container {
+    line-height: 1.5em;
+    flex-basis: 55%; /* Reduce the width allocated to text to give more space to the image */
+    padding-right: 20px;
+}
+
+.image-container {
+    max-width: 50%;
+    height: auto;
+    margin-left: 10px; /* Reduce the left margin */
+}
+
+.city-container {
+    max-width: 90%;
+    margin: 5% 5%;
+    background-color: #91aec4;
+    padding: 4%; /* Reduce padding slightly to give more room */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.slider-wrapper {
+    position: relative;
+    max-width: 100%; /* Increase the width to occupy more space */
+    margin-left: 0; /* Align to center if necessary */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    aspect-ratio: 16/9;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 10px;
+    max-width: 100%; /* Ensure it takes full width */
+    height: 500px; /* You can adjust this to your desired height */
+}
+
+.slider img {
+    flex: 0 0 100%;
+    scroll-snap-align: start; /* Align to the start of each image */
+    object-fit: cover;
+    width: 100%; /* Make the image take up the full width */
+    height: 100%; /* Ensure the image fills the container's height */
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 5px;
+    position: absolute;
+    bottom: 10px; /* Adjust positioning as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
