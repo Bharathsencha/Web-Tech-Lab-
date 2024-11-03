@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="images/cable-car-solid.png" alt="Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="home_page.html">Home</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="booking-section">
+            <h2>Book Your Trip</h2>
+            <label for="datePicker">Select Your Date:</label>
+            <input type="date" id="datePicker">
+            <p id="priceDisplay">Price: </p>
+            <button onclick="bookNow()">Book Now</button>
+        </div>
+    </div>
+
+    <script>
+        function calculatePrice(date) {
+            const selectedDate = new Date(date);
+            let basePrice = 100; // Base price in currency units
+            let finalPrice = basePrice;
+
+            // Check if December
+            if (selectedDate.getMonth() === 11) { // Months are 0-indexed, December is 11
+                finalPrice *= 1.2;
+            }
+
+            // Check if weekend
+            const day = selectedDate.getDay();
+            if (day === 0 || day === 6) { // 0 = Sunday, 6 = Saturday
+                finalPrice *= 1.1;
+            }
+
+            return finalPrice.toFixed(2);
+        }
+
+        // Update the price display on date selection
+        document.getElementById('datePicker').addEventListener('change', function() {
+            const selectedDate = this.value;
+            const price = calculatePrice(selectedDate);
+            document.getElementById('priceDisplay').innerText = `Price: $${price}`;
+        });
+
+        function bookNow() {
+            alert("Your booking has been placed!");
+        }
+    </script>
+</body>
+</html>
